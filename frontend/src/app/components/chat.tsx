@@ -101,7 +101,9 @@ const Chat: React.FC<{ room?: string}> = ({ room }) => {
     }
     
     return (
-        <div>      
+        <div>
+            <p>Sala atual: { room }</p>
+            <br />
             <MessagesList>
                 { messages && 
                     messages.map((message: string, idx: number) => 
