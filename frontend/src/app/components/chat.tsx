@@ -8,7 +8,7 @@ import styled from 'styled-components';
 const MessagesList = styled.ul`
     list-style-type: none; 
     margin: 0; 
-    padding: 0; 
+    padding: 0;
 `;
 
 const Message = styled.li`
@@ -66,7 +66,7 @@ const Chat: React.FC<{ room?: string}> = ({ room }) => {
     const [currentInputMessage, setCurrentInputMessage] = useState<string>('');
 
     useEffect(() => {
-        const newSocket = io('http://192.168.239:3001/global');
+        const newSocket = io('http://192.168.0.239:3001/global');
         const initSocket = async (socket: Socket) => {
             socket.on('connected', (message: string) => {
                 socket.emit('joinRoom', room);
